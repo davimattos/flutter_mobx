@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pomodoro_mobx/components/botao_circular.dart';
+
+import './components.dart';
 
 class EntradaTempo extends StatelessWidget {
   final String titulo;

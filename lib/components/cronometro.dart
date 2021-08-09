@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pomodoro_mobx/components/botao_cronometro.dart';
+
+import './components.dart';
 
 class Cronometro extends StatelessWidget {
   const Cronometro({Key? key}) : super(key: key);

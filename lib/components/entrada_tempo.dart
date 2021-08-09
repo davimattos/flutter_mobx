@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pomodoro_mobx/components/botao_circular.dart';
 
 class EntradaTempo extends StatelessWidget {
   final String titulo;
@@ -19,36 +20,14 @@ class EntradaTempo extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              onPressed: () {},
-              child: Icon(
-                Icons.arrow_downward,
-                color: Colors.white,
-              ),
-              style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(15),
-                  primary: Colors.red),
-            ),
+            BotaoCircular(icone: Icons.arrow_downward),
             Text(
               '${this.valor} min',
               style: TextStyle(fontSize: 18),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Icon(
-                    Icons.arrow_upward,
-                    color: Colors.white,
-                  ),
-                  style: ElevatedButton.styleFrom(
-                      shape: CircleBorder(),
-                      padding: EdgeInsets.all(15),
-                      primary: Colors.red),
-                )
-              ],
+              children: [BotaoCircular(icone: Icons.arrow_upward)],
             ),
           ],
         ),

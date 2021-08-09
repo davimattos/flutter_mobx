@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pomodoro_mobx/store/pomodoro.store.dart';
+import 'package:provider/provider.dart';
 
 import './components.dart';
 
@@ -14,6 +16,8 @@ class EntradaTempo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final store = Provider.of<PomodoroStore>(context);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -24,7 +28,10 @@ class EntradaTempo extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            BotaoCircular(icone: Icons.arrow_downward, onpress: this.dec),
+            BotaoCircular(
+                icone: Icons.arrow_downward,
+                corFundo: store.estaTrabalhando() ? Colors.red : Colors.green,
+                onpress: this.dec),
             Text(
               '${this.valor} min',
               style: TextStyle(fontSize: 18),
@@ -34,6 +41,7 @@ class EntradaTempo extends StatelessWidget {
               children: [
                 BotaoCircular(
                   icone: Icons.arrow_upward,
+                  corFundo: store.estaTrabalhando() ? Colors.red : Colors.green,
                   onpress: this.inc,
                 )
               ],

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 class BotaoCircular extends StatelessWidget {
   final IconData icone;
+  final Color corFundo;
   final void Function()? onpress;
 
-  const BotaoCircular({Key? key, required this.icone, this.onpress})
+  const BotaoCircular(
+      {Key? key, required this.icone, required this.corFundo, this.onpress})
       : super(key: key);
 
   @override
@@ -18,7 +20,7 @@ class BotaoCircular extends StatelessWidget {
       style: ElevatedButton.styleFrom(
           shape: CircleBorder(),
           padding: EdgeInsets.all(15),
-          primary: Colors.red),
+          primary: corFundo),
     );
   }
 }

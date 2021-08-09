@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 
 class BotaoCircular extends StatelessWidget {
   final IconData icone;
+  final void Function()? onpress;
 
-  const BotaoCircular({Key? key, required this.icone}) : super(key: key);
+  const BotaoCircular({Key? key, required this.icone, this.onpress})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onpress,
       child: Icon(
         icone,
         color: Colors.white,
